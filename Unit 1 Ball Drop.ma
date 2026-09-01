@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: Unit 1 Ball Drop.ma
-//Last modified: Mon, Aug 31, 2026 10:32:26 PM
+//Last modified: Mon, Aug 31, 2026 10:51:24 PM
 //Codeset: 1252
 requires maya "2027";
 requires "mtoa" "5.6.1.1";
@@ -10,13 +10,13 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202604221258-70da84b25e";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "261E9938-4635-85D7-45E1-F6B3EC90BCCB";
+fileInfo "UUID" "122534CF-4B3C-7CF6-BC5C-D9BB2BEAF39A";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "D52595BB-4847-9C61-B816-05AEDF42E6DA";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 5.5139836048404165 4.0829395915458857 30.245767087165156 ;
-	setAttr ".r" -type "double3" -2.7383527296043608 9.3999999999987729 -2.5186280756655505e-17 ;
+	setAttr ".t" -type "double3" -1.2154330048349475 10.264885298152553 29.708841149805675 ;
+	setAttr ".r" -type "double3" -14.138352729604437 -3.0000000000013252 -6.4693677403708335e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "00F546D6-49FB-A06E-DDEB-1881C8D910F1";
 	setAttr -k off ".v" no;
@@ -232,8 +232,8 @@ createNode script -n "sceneConfigurationScriptNode";
 createNode trackInfoManager -n "trackInfoManager1";
 	rename -uid "45329B72-48E5-7080-C0C2-448A00166A23";
 select -ne :time1;
-	setAttr ".o" 40;
-	setAttr ".unw" 40;
+	setAttr ".o" 34;
+	setAttr ".unw" 34;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
