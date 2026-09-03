@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: Hand.ma
-//Last modified: Wed, Sep 02, 2026 06:34:42 PM
+//Last modified: Wed, Sep 02, 2026 07:05:36 PM
 //Codeset: 1252
 requires maya "2027";
 requires "mtoa" "5.6.1.1";
@@ -10,18 +10,18 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202604221258-70da84b25e";
 fileInfo "osv" "Windows 11 Enterprise v2009 (Build: 26200)";
-fileInfo "UUID" "42CF1F91-4A07-00F3-94D4-1D89F8E7D6DA";
+fileInfo "UUID" "76B2FFEA-4274-01F7-AE55-2D99E562397C";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "67D5907E-455C-D570-3541-FFA0FD87A127";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 15.204481776433703 18.631635648411926 -26.576551874248477 ;
-	setAttr ".r" -type "double3" -32.738352729559601 -203.39999999996408 0 ;
+	setAttr ".t" -type "double3" -18.621795191042672 23.848107139819678 -15.398606191849591 ;
+	setAttr ".r" -type "double3" -46.538352729526373 -126.19999999993169 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "5118343C-498A-7A18-036C-BD93A0F7C46A";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 34.834494023840612;
+	setAttr ".coi" 34.834494023841081;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -900,13 +900,6 @@ createNode mesh -n "JointShape9" -p "Joint9";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "nurbsCircle1";
-	rename -uid "7D8B4295-4545-6790-673C-7B8E7E71E2B3";
-	setAttr ".t" -type "double3" 1.1117148399353027 0.43619802594184875 -4.1964874267578125 ;
-createNode nurbsCurve -n "nurbsCircleShape1" -p "nurbsCircle1";
-	rename -uid "E48A4517-49F5-D66F-0786-EFB81E81DD2A";
-	setAttr -k off ".v";
-	setAttr ".tw" yes;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "843EDDB2-40A5-A6C2-E6D4-7E8C36EC062E";
 	setAttr -s 2 ".lnk";
@@ -935,9 +928,6 @@ createNode transformGeometry -n "transformGeometry1";
 createNode polyCube -n "polyCube2";
 	rename -uid "EDDD972B-48BC-A32C-DBF3-98B7D1C50CAA";
 	setAttr ".cuv" 4;
-createNode makeNurbCircle -n "makeNurbCircle1";
-	rename -uid "37265B78-42B8-7DE8-1009-83B54AAF99AD";
-	setAttr ".nr" -type "double3" 0 1 0 ;
 createNode script -n "uiConfigurationScriptNode";
 	rename -uid "7FDF85BC-4CFA-3197-2829-58A9DB7CEA38";
 	setAttr ".b" -type "string" (
@@ -1035,7 +1025,6 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".btrs" 512;
 connectAttr "polyCube2.out" "PalmShape.i";
 connectAttr "transformGeometry1.og" "FingerShape1.i";
-connectAttr "makeNurbCircle1.oc" "nurbsCircleShape1.cr";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
